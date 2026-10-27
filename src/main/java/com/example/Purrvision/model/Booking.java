@@ -5,6 +5,8 @@ import jakarta.persistence.*;
 import java.time.LocalDateTime;
 import java.util.UUID;
 
+//BESKRIVER EN BOKNING - blir tabellen "bookings" i databasen. Varje fält = en kolumn.
+
 @Entity
 @Table(name = "bookings")
 public class Booking {
