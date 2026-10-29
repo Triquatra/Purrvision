@@ -1,0 +1,21 @@
+### Beskrivning av requesten
+METOD url
+Header: värde
+
+body (om det behövs)
+
+
+### Hämta alla bokningar
+GET http://localhost:3000/bookings
+
+### Skapa bokning
+POST http://localhost:3000/bookings
+Content-Type: application/json
+
+{
+  "name": "Dessi",
+  "email": "dessi@claude.ai",
+  "movieTitle": "Insidious",
+  "dateTime": "2026-11-06T19:30:00",
+  "numberOfPeople": 2
+}
