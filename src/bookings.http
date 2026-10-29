@@ -13,9 +13,9 @@ POST http://localhost:3000/bookings
 Content-Type: application/json
 
 {
-  "name": "Dessi",
-  "email": "dessi@claude.ai",
-  "movieTitle": "Insidious",
-  "dateTime": "2026-11-06T19:30:00",
+  "name": "Samantha",
+  "email": "Samantha@claude.ai",
+  "movieTitle": "Catz",
+  "dateTime": "2026-11-08T20:30:00",
   "numberOfPeople": 2
 }
