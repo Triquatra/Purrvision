@@ -48,4 +48,9 @@ public class BookingService {
        existing.setStatus(booking.getStatus());
     return bookingRepository.save(existing);
     }
+
+    public void deleteBookingById(UUID id) {
+        getBookingById(id);
+        bookingRepository.deleteById(id);
+    }
 }

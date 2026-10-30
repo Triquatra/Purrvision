@@ -37,3 +37,6 @@ Content-Type: application/json
   "numberOfPeople": 5,
   "status": "CONFIRMED"
 }
+
+### Ta bort bokning med id
+DELETE http://localhost:3000/bookings/65ed9aaf-c833-46fc-bc19-8e6c835fde47
