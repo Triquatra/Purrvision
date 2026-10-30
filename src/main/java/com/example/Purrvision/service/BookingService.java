@@ -6,9 +6,12 @@ package com.example.Purrvision.service;
 import com.example.Purrvision.model.Booking;
 import com.example.Purrvision.model.BookingStatus;
 import com.example.Purrvision.repository.BookingRepository;
+import org.springframework.http.HttpStatus;
 import org.springframework.stereotype.Service;
+import org.springframework.web.server.ResponseStatusException;
 
 import java.util.List;
+import java.util.UUID;
 
 @Service
 public class BookingService {
@@ -26,5 +29,10 @@ public class BookingService {
     public Booking createBooking(Booking booking) {
         booking.setStatus(BookingStatus.PENDING);
         return bookingRepository.save(booking);
+    }
+
+    public Booking getBookingById ( UUID id) {
+        return bookingRepository.findById(id).orElseThrow(()
+                -> new ResponseStatusException(HttpStatus.NOT_FOUND));
     }
 }

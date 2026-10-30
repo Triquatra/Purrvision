@@ -6,6 +6,7 @@ import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
+import java.util.UUID;
 
 @RestController
 public class BookingController {
@@ -25,6 +26,12 @@ public class BookingController {
     public Booking createBooking(@RequestBody Booking booking) {
         return bookingService.createBooking(booking);
     }
+
+    @GetMapping("/bookings/{id}")
+    public Booking getBookingById(@PathVariable UUID id) {
+        return bookingService.getBookingById(id);
+    }
+
 }
 
 
