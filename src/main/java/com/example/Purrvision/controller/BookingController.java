@@ -32,6 +32,10 @@ public class BookingController {
         return bookingService.getBookingById(id);
     }
 
+    @PutMapping("/bookings/{id}")
+    public Booking updateBooking(@RequestBody Booking booking, @PathVariable UUID id) {
+        return bookingService.updateBooking(booking, id);
+    }
 }
 
 

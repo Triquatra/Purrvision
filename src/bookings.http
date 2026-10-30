@@ -23,3 +23,17 @@ Content-Type: application/json
 
 ### Hämta bokning med id
 GET http://localhost:3000/bookings/65ed9aaf-c833-46fc-bc19-8e6c835fde47
+
+
+### Ändra bokning med id
+PUT http://localhost:3000/bookings/65ed9aaf-c833-46fc-bc19-8e6c835fde47
+Content-Type: application/json
+
+{
+  "name": "Samantha",
+  "email": "Samantha@claude.ai",
+  "movieTitle": "Catz",
+  "dateTime": "2026-11-08T20:30:00",
+  "numberOfPeople": 5,
+  "status": "CONFIRMED"
+}

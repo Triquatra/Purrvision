@@ -13,6 +13,8 @@ import org.springframework.web.server.ResponseStatusException;
 import java.util.List;
 import java.util.UUID;
 
+//LOGIKEN/REGLERNA - bestämmer hur saker ska gå till. T.ex. ny bokning = PENDING, bokningen finns inte = 404.
+
 @Service
 public class BookingService {
 
@@ -31,8 +33,19 @@ public class BookingService {
         return bookingRepository.save(booking);
     }
 
-    public Booking getBookingById ( UUID id) {
+    public Booking getBookingById(UUID id) {
         return bookingRepository.findById(id).orElseThrow(()
                 -> new ResponseStatusException(HttpStatus.NOT_FOUND));
+    }
+
+    public Booking updateBooking(Booking booking, UUID id) {
+       Booking existing = getBookingById(id);
+       existing.setName(booking.getName());
+       existing.setEmail(booking.getEmail());
+       existing.setMovieTitle(booking.getMovieTitle());
+       existing.setDateTime(booking.getDateTime());
+       existing.setNumberOfPeople(booking.getNumberOfPeople());
+       existing.setStatus(booking.getStatus());
+    return bookingRepository.save(existing);
     }
 }
