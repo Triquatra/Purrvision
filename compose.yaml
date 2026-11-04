@@ -21,3 +21,31 @@ services:
       - "3000:3000"
     depends_on:
       - postgres
+
+  api2:
+    build: .
+    environment:
+      DB_HOST: postgres
+      DB_PORT: 5432
+      DB_NAME: bookingdb
+      DB_USER: bookinguser
+      DB_PASSWORD: bookingpassword
+      INSTANCE_NAME: api-2
+    ports:
+       - "3001:3000"
+    depends_on:
+      - postgres
+
+  api3:
+    build: .
+    environment:
+      DB_HOST: postgres
+      DB_PORT: 5432
+      DB_NAME: bookingdb
+      DB_USER: bookinguser
+      DB_PASSWORD: bookingpassword
+      INSTANCE_NAME: api-3
+    ports:
+      - "3002:3000"
+    depends_on:
+      - postgres
