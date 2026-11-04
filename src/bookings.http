@@ -13,16 +13,16 @@ POST http://localhost:3000/bookings
 Content-Type: application/json
 
 {
-  "name": "Samantha",
-  "email": "Samantha@claude.ai",
+  "name": "Nala",
+  "email": "Nala@claude.ai",
   "movieTitle": "Catz",
-  "dateTime": "2026-11-08T20:30:00",
-  "numberOfPeople": 2
+  "dateTime": "2026-11-03T20:30:00",
+  "numberOfPeople": 3
 }
 
 
 ### Hämta bokning med id
-GET http://localhost:3000/bookings/6dae2744-8037-45d2-afc4-b4f8c3372b44
+GET http://localhost:3002/bookings/119a8f38-0475-4153-ae46-2e216d5baac7
 
 
 ### Ändra bokning med id
